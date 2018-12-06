@@ -57,7 +57,7 @@ public class Register {
           city.equalsIgnoreCase("Orillia")) 
             this.city = city; 
         else 
-            throw new IllegalArgumentException("Please select any of the above city! ");
+            throw new IllegalArgumentException("Please select any of the above city ");
     } 
 
     public String getResType() {
