@@ -52,10 +52,12 @@ public class Register {
     }
 
     public void setCity(String city) {
-       if(!city.isEmpty()) 
+       if(city.equalsIgnoreCase("Barrie") ||
+          city.equalsIgnoreCase("Toronto") ||
+          city.equalsIgnoreCase("Orillia")) 
             this.city = city; 
         else 
-            throw new IllegalArgumentException("City name can not be empty. Please enter valid city name ");
+            throw new IllegalArgumentException("Please select any of the above city! ");
     } 
 
     public String getResType() {
