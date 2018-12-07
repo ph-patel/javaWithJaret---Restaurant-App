@@ -9,17 +9,16 @@ import java.time.Period;
  * @author Priyesh Hingrajia
  */
 public class Register {
-    String resName , address , city , resType , delivery , driveThru ;
-    int phoneNum ;
+    String resName , address , city , resType , delivery , driveThru , phoneNum ;
+    
     LocalDate startDate ;
 
-    public Register(String resName, String address, String city, String resType, String delivery, String driveThru, int phoneNum, LocalDate startDate) {
+    public Register(String resName, String address, String city, String resType, String delivery, String phoneNum, LocalDate startDate) {
         setResName(resName); 
         setAddress(address); 
         setCity(city); 
         setResType(resType);
         setDelivery(delivery); 
-        setDriveThru(driveThru); 
         setPhoneNum(phoneNum);
         setStartDate(startDate);
     }
@@ -100,12 +99,12 @@ public class Register {
             throw new IllegalArgumentException("Please select if this restaurant have drive thru or not !");
     }
 
-    public int getPhoneNum() {
+    public String getPhoneNum() {
         return phoneNum;
     }
 
-    public void setPhoneNum(int phoneNum) {
-        if(phoneNum > 0)
+    public void setPhoneNum(String phoneNum) {
+        if(!phoneNum.isEmpty() )
             this.phoneNum = phoneNum;
         else
             throw new IllegalArgumentException("Please enter the valid phone number !!");
@@ -126,6 +125,13 @@ public class Register {
          int age = Period.between(startDate ,LocalDate.now()).getYears();
          return age ;
     }
+    
+    @Override
+    public String toString()
+    {
+        return String.format("Restaurant named %s located at %s , %s is %d years old and also provide delivery with %s", resName, address,city, this.getAge() , delivery);
+    }
+    
     
     
 }

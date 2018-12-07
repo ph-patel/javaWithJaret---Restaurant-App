@@ -23,7 +23,7 @@ import javafx.scene.image.ImageView;
 
 /**
  *
- * @author 16473
+ * @author Priyesh Hingrajia
  */
 public class FXMLDocumentController implements Initializable { 
     
@@ -88,7 +88,29 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     void saveButtonPressed(ActionEvent event) {
-
+        if (this.startDate.getValue() != null)
+        {
+            try{
+                
+               
+                Register newRestaurant = new Register(
+                                        this.resNameTextField.getText(),
+                                        this.addressTextField.getText(),
+                                        this.cityComboBox.getValue(),
+                                        this.burritoRadioButton.getText(),
+                                        this.uberEatsCheckBox.getText(),
+                                        this.phoneTextField.getText(),
+                                        this.startDate.getValue());
+                System.out.println(newRestaurant);
+            } catch (IllegalArgumentException e)
+            {
+                errMsg.setText(e.getMessage());
+            }
+        }
+        else
+        {
+            errMsg.setText("You need to set the start date");
+        }
     }
 
     
