@@ -21,9 +21,9 @@
 
 <AnchorPane id="AnchorPane" prefHeight="623.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.FXMLDocumentController">
    <children>
-      <Label alignment="CENTER" contentDisplay="TOP" layoutX="34.0" layoutY="-2.0" prefHeight="54.0" prefWidth="689.0" text="Restaurant Register Application" textFill="#ff3434">
+      <Label alignment="CENTER" contentDisplay="TOP" layoutX="34.0" layoutY="-2.0" prefHeight="54.0" prefWidth="689.0" text="Restaurant Register Application" textFill="#36ff98">
          <font>
-            <Font name="Arial Black" size="36.0" />
+            <Font name="Century Gothic Italic" size="36.0" />
          </font>
       </Label>
       <VBox layoutY="75.0" prefHeight="470.0" prefWidth="750.0">
@@ -149,7 +149,7 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="cityComboBox" prefHeight="40.0" prefWidth="194.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="cityComboBox" prefHeight="45.0" prefWidth="191.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      </children>
                      <HBox.margin>
                         <Insets left="30.0" />
@@ -179,7 +179,7 @@
             </HBox>
          </children>
       </VBox>
-      <Label fx:id="errMsg" layoutX="31.0" layoutY="543.0" prefHeight="77.0" prefWidth="679.0" text="Label" textFill="#09f224">
+      <Label fx:id="errMsg" layoutX="31.0" layoutY="543.0" prefHeight="77.0" prefWidth="679.0" text="Label" textFill="RED">
          <font>
             <Font size="24.0" />
          </font>
