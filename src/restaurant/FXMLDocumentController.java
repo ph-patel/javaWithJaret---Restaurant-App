@@ -18,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 /**
@@ -72,7 +73,17 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     void radioBtnChanged(ActionEvent event) {
-
+          if (burritoRadioButton.isSelected())
+              photo.setImage(new Image("/images/burrito.png")); 
+          else if (burgerRadioButton.isSelected())
+              photo.setImage(new Image("/images/burger.png")); 
+          else if (subRadioButton.isSelected())
+              photo.setImage(new Image("/images/sub.png"));
+          else if (pizzaRadioButton.isSelected())
+              photo.setImage(new Image("/images/pizza.png")); 
+          else 
+              photo.setImage(new Image("/images/default.jpg")); 
+              
     }
 
     @FXML
@@ -101,7 +112,7 @@ public class FXMLDocumentController implements Initializable {
          */
         setResType = new ToggleGroup() ;
         this.burgerRadioButton.setToggleGroup(setResType);
-        this.burgerRadioButton.setToggleGroup(setResType);
+        this.burritoRadioButton.setToggleGroup(setResType);
         this.pizzaRadioButton.setToggleGroup(setResType);
         this.subRadioButton.setToggleGroup(setResType);
         

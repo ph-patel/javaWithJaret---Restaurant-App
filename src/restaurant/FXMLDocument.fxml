@@ -83,7 +83,6 @@
                               <Font size="24.0" />
                            </font>
                         </TextField>
-                        <ComboBox fx:id="cityComboBox" prefHeight="48.0" prefWidth="195.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <TextField fx:id="phoneTextField" prefHeight="50.0" prefWidth="195.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <font>
                               <Font size="24.0" />
@@ -150,6 +149,7 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
+                        <ComboBox fx:id="cityComboBox" prefHeight="40.0" prefWidth="194.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      </children>
                      <HBox.margin>
                         <Insets left="30.0" />
