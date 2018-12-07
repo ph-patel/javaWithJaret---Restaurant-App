@@ -37,7 +37,7 @@ public class RegisterTest {
     @Before
     public void setUp() {
         
-        validRestaurant = new Register("Fivepetals" , "123 Dunsmore Street" ,"Barrie" , "burrito" , "Uber Eats" , "No" , 64732517 , LocalDate.of(1976, Month.MARCH, 10) ) ;
+        validRestaurant = new Register("Fivepetals" , "123 Dunsmore Street" ,"Barrie" , "burrito" , "Uber Eats" , "64732517" , LocalDate.of(1976, Month.MARCH, 10) ) ;
     }
     
     @After
@@ -255,47 +255,7 @@ public class RegisterTest {
         }
     }
     
-    /**
-     * Test of getDriveThru method, of class Register.
-     */
-    @Test
-    public void testGetDriveThru() {
-        System.out.println("getDriveThru");
-        Register instance = null;
-        String expResult = "No";
-        String result = validRestaurant.getDriveThru();
-        assertEquals(expResult, result);
-        
-    }
-
-    /**
-     * Test of setDriveThru method, of class Register.
-     */
-    @Test
-    public void testSetDriveThru() {
-        System.out.println("setDriveThru");
-        String driveThru = "";
-        Register instance = null;
-        validRestaurant.setDriveThru("No");
-       String result = validRestaurant.getDriveThru();
-        assertEquals("No", result);
-    }
-    
-      @Test
-    public void testSetDriveThruInvalid()
-    {
-        String driveThru = "";
-        try
-        {
-            validRestaurant.setDriveThru(driveThru);
-            fail("The driveThru method with a empty option should have triggered an exception.");
-        }
-        catch (IllegalArgumentException e)
-        {
-            System.out.println(e);
-        }
-    }
-    
+  
     
 
     /**
@@ -306,8 +266,8 @@ public class RegisterTest {
     public void testGetPhoneNum() {
         System.out.println("getPhoneNum");
         Restaurant instance = null;
-        int expResult = 64732517;
-        int result = validRestaurant.getPhoneNum();
+        String expResult = "64732517";
+        String result = validRestaurant.getPhoneNum();
         assertEquals(expResult, result);
        
     }
@@ -318,17 +278,17 @@ public class RegisterTest {
     @Test
     public void testSetPhoneNum() {
         System.out.println("setPhoneNum");
-        int phoneNum = 0;
+        String phoneNum = "";
         Restaurant instance = null;
-        validRestaurant.setPhoneNum(64732517);
-        int result = validRestaurant.getPhoneNum();
-        assertEquals(64732517, result);
+        validRestaurant.setPhoneNum("64732517");
+        String result = validRestaurant.getPhoneNum();
+        assertEquals("64732517", result);
     }
     
     @Test
     public void testSetPhoneNumInvalid()
     {
-        int phoneNum = -1;
+        String phoneNum = "";
         try
         {
             validRestaurant.setPhoneNum(phoneNum);

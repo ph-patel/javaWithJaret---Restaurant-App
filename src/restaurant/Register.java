@@ -87,17 +87,7 @@ public class Register {
             throw new IllegalArgumentException("Please select any of the above type of Delivery Options");
     }
 
-    public String getDriveThru() {
-        return driveThru;
-    }
-
-    public void setDriveThru(String driveThru) {
-        if(driveThru.equalsIgnoreCase("Yes") ||
-           driveThru.equalsIgnoreCase("No"))
-            this.driveThru = driveThru;
-        else 
-            throw new IllegalArgumentException("Please select if this restaurant have drive thru or not !");
-    }
+    
 
     public String getPhoneNum() {
         return phoneNum;
