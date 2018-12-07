@@ -14,21 +14,21 @@ public class Register {
     LocalDate startDate ;
 
     public Register(String resName, String address, String city, String resType, String delivery, String phoneNum, LocalDate startDate) {
-        setResName(resName); 
+        setResName(resName);
         setAddress(address); 
-        setCity(city); 
+        setCity(city);  
         setResType(resType);
         setDelivery(delivery); 
-        setPhoneNum(phoneNum);
-        setStartDate(startDate);
+        setPhoneNum(phoneNum); 
+        setStartDate(startDate); 
     }
 
     public String getResName() {
-        return resName; 
+        return resName;  
     }
 
     public void setResName(String resName) {
-        if (resName.matches("[A-Z][a-z]*"))  
+        if (resName.matches("[A-Z][a-z]*"))   
              this.resName = resName;  
         else 
              throw new IllegalArgumentException("Restaurant name should start with uppercase letter ");

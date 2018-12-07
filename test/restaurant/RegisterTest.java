@@ -353,4 +353,14 @@ public class RegisterTest {
         assertEquals(expResult, result);
         
     }
+    
+     /**
+     * Test of toString method, 
+     */
+    @Test
+    public void testToString() {
+        String expResult = "Restaurant named Fivepetals located at 123 Dunsmore Street , Barrie is 42 years old and also provide delivery with Uber Eats";
+        String result = validRestaurant.toString();
+        assertEquals(expResult, result);
+    }
 }

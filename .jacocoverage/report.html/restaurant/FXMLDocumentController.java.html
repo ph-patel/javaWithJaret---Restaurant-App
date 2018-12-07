@@ -10,27 +10,137 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  *
- * @author 16473
+ * @author Priyesh Hingrajia
  */
-<span class="nc" id="L19">public class FXMLDocumentController implements Initializable {</span>
+<span class="nc" id="L28">public class FXMLDocumentController implements Initializable { </span>
     
+      @FXML
+    private TextField resNameTextField;
+
     @FXML
-    private Label label;
+    private TextField addressTextField;
+
+    @FXML
+    private ComboBox&lt;String&gt; cityComboBox;
+
+    @FXML
+    private TextField phoneTextField;
+
+    @FXML
+    private DatePicker startDate;
+
+    @FXML
+    private RadioButton burgerRadioButton;
+
+    @FXML
+    private RadioButton pizzaRadioButton;
+
+    @FXML
+    private RadioButton burritoRadioButton;
+
+    @FXML
+    private RadioButton subRadioButton;
     
+    private ToggleGroup setResType ;
+
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-<span class="nc" id="L26">        System.out.println(&quot;You clicked me!&quot;);</span>
-<span class="nc" id="L27">        label.setText(&quot;Hello World!&quot;);</span>
-<span class="nc" id="L28">    }</span>
+    private CheckBox uberEatsCheckBox;
+
+    @FXML
+    private CheckBox skipTheDishesCheckBox;
+
+    @FXML
+    private ImageView photo;
+
+    @FXML
+    private Button saveButton;
+
+    @FXML
+    private Label errMsg;
+
+    @FXML
+    void radioBtnChanged(ActionEvent event) {
+<span class="nc bnc" id="L76" title="All 2 branches missed.">          if (burritoRadioButton.isSelected())</span>
+<span class="nc" id="L77">              photo.setImage(new Image(&quot;/images/burrito.png&quot;)); </span>
+<span class="nc bnc" id="L78" title="All 2 branches missed.">          else if (burgerRadioButton.isSelected())</span>
+<span class="nc" id="L79">              photo.setImage(new Image(&quot;/images/burger.png&quot;)); </span>
+<span class="nc bnc" id="L80" title="All 2 branches missed.">          else if (subRadioButton.isSelected())</span>
+<span class="nc" id="L81">              photo.setImage(new Image(&quot;/images/sub.png&quot;));</span>
+<span class="nc bnc" id="L82" title="All 2 branches missed.">          else if (pizzaRadioButton.isSelected())</span>
+<span class="nc" id="L83">              photo.setImage(new Image(&quot;/images/pizza.png&quot;)); </span>
+          else 
+<span class="nc" id="L85">              photo.setImage(new Image(&quot;/images/default.jpg&quot;)); </span>
+              
+<span class="nc" id="L87">    }</span>
+
+    @FXML
+    void saveButtonPressed(ActionEvent event) {
+<span class="nc bnc" id="L91" title="All 2 branches missed.">        if (this.startDate.getValue() != null)</span>
+        {
+            try{
+                
+               
+<span class="nc" id="L96">                Register newRestaurant = new Register(</span>
+<span class="nc" id="L97">                                        this.resNameTextField.getText(),</span>
+<span class="nc" id="L98">                                        this.addressTextField.getText(),</span>
+<span class="nc" id="L99">                                        this.cityComboBox.getValue(),</span>
+<span class="nc" id="L100">                                        this.burritoRadioButton.getText(),</span>
+<span class="nc" id="L101">                                        this.uberEatsCheckBox.getText(),</span>
+<span class="nc" id="L102">                                        this.phoneTextField.getText(),</span>
+<span class="nc" id="L103">                                        this.startDate.getValue());</span>
+<span class="nc" id="L104">                System.out.println(newRestaurant);</span>
+<span class="nc" id="L105">            } catch (IllegalArgumentException e)</span>
+            {
+<span class="nc" id="L107">                errMsg.setText(e.getMessage());</span>
+<span class="nc" id="L108">            }</span>
+        }
+        else
+        {
+<span class="nc" id="L112">            errMsg.setText(&quot;You need to set the start date&quot;);</span>
+        }
+<span class="nc" id="L114">    }</span>
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-<span class="nc" id="L33">    }    </span>
+         
+        /**
+         * this code makes the error message label disappear until error is triggered
+         */
+<span class="nc" id="L123">        errMsg.setText(&quot;&quot;);</span>
+        
+        
+        /**
+         * this code configure the combo box and populate it with barrie , Toronto and Orillia .
+         */
+<span class="nc" id="L129">        cityComboBox.getItems().addAll(&quot;Barrie&quot; , &quot;Toronto&quot; , &quot;Orillia&quot;);</span>
+<span class="nc" id="L130">        cityComboBox.setValue(&quot;Barrie&quot;);</span>
+        
+        /**
+         * this code setup the radio button and introduce the toggle group
+         */
+<span class="nc" id="L135">        setResType = new ToggleGroup() ;</span>
+<span class="nc" id="L136">        this.burgerRadioButton.setToggleGroup(setResType);</span>
+<span class="nc" id="L137">        this.burritoRadioButton.setToggleGroup(setResType);</span>
+<span class="nc" id="L138">        this.pizzaRadioButton.setToggleGroup(setResType);</span>
+<span class="nc" id="L139">        this.subRadioButton.setToggleGroup(setResType);</span>
+        
+<span class="nc" id="L141">    }     </span>
+    
+    
     
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
